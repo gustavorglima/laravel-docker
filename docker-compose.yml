@@ -1,4 +1,4 @@
-version: "2"
+version: "3"
 services:
   nginx:
       build:
@@ -7,6 +7,8 @@ services:
           - "8080:80"
       volumes:
           - ../:/var/app
+      networks:
+          - network
   fpm:
       build:
           context: ./fpm
@@ -17,3 +19,16 @@ services:
       environment:
           - "DB_HOST=db"
           - "DB_DATABASE=laravel"
+      networks:
+          - network
+  mysql:
+    image: mysql
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: app
+      MYSQL_USER: laravel
+      MYSQL_PASSWORD: secret
+networks:
+  network:
