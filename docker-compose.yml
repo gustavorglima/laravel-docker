@@ -30,5 +30,7 @@ services:
       MYSQL_DATABASE: app
       MYSQL_USER: laravel
       MYSQL_PASSWORD: secret
+    networks:
+      - network
 networks:
   network:
