@@ -1,0 +1,19 @@
+version: "2"
+services:
+  nginx:
+      build:
+          context: ./nginx
+      ports:
+          - "8080:80"
+      volumes:
+          - ../:/var/app
+  fpm:
+      build:
+          context: ./fpm
+      volumes:
+          - ../:/var/app
+      expose:
+          - "9000"
+      environment:
+          - "DB_HOST=db"
+          - "DB_DATABASE=laravel"
