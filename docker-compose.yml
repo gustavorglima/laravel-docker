@@ -17,8 +17,8 @@ services:
       expose:
           - "9000"
       environment:
-          - "DB_HOST=db"
-          - "DB_DATABASE=laravel"
+          - "DB_HOST=mysql"
+          - "DB_DATABASE=app"
       networks:
           - network
   mysql:

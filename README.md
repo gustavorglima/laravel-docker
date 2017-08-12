@@ -1,27 +1,20 @@
 # Laravel Docker
 Um ambiente de desenvolvimento PHP para executar o Laravel no Docker.
 
-### Usamos
- - PHP 7
- - NGINX
- - MySQL
- 
+ * PHP 7
+ * NGINX
+ * MySQL
+
 ## Como usar?
-##### Baixe o Docker e instale-o:
-- Faça o [download](https://store.docker.com/search?offering=community&q=&type=edition) docker e então instale.
+* Baixe e instale o Docker: [download](https://store.docker.com/search?offering=community&q=&type=edition);
+* Após instalado abra o docker e vá em Preferences > File Sharing e adicione o diretório do seu projeto;
+* Pelo terminal vá até o diretório raiz do seu projeto e digite os comandos abaixo;
 
-##### Compartilhe o diretório do seu projeto:
-- Após instalado, vá em Preferences > File Sharing e adicione o diretório do seu projeto.
+```
+git clone https://github.com/gustavorglima/laravel-docker.git
+cd laravel-docker
+docker-compose up -d
+```
 
-##### Clone o repositório:
-- Abra o terminal e vá até o diretório raiz do seu projeto laravel e digite: 
-
-        git clone https://github.com/gustavorglima/laravel-docker.git
-
-##### Subindo Docker
-- Digite o seguinte comando:
-
-        docker-compose up -d
- 
-### Pronto!
-- Acesse seu projeto em [localhost:8080](http://localhost:8080)
+## Pronto!
+* Agora é só aguardar! Assim que terminar acesse: [http://localhost:8080](http://localhost:8080).
