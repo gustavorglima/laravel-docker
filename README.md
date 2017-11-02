@@ -1,7 +1,7 @@
 # Laravel Docker
 Um ambiente de desenvolvimento PHP para executar o Laravel no Docker.
 
- * PHP 7
+ * PHP 7.1
  * NGINX
  * MySQL
 
