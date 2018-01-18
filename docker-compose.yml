@@ -1,30 +1,32 @@
 version: "3"
 services:
   nginx:
-      build:
-          context: ./nginx
-      ports:
-          - "8080:80"
-      volumes:
-          - ../:/var/app
-      networks:
-          - network
-  fpm:
-      build:
-          context: ./fpm
-      volumes:
-          - ../:/var/app
-      expose:
-          - "9000"
-      environment:
-          - "DB_HOST=mysql"
-          - "DB_DATABASE=app"
-      networks:
-          - network
+    build:
+      context: ./nginx
+    ports:
+      - 8080:80
+    volumes:
+      - ../:/var/app
+    networks:
+      - network
+
+  php:
+    build:
+      context: ./php
+    volumes:
+      - ../:/var/app
+    expose:
+      - 9000
+    environment:
+      - DB_HOST mysql
+      - DB_DATABASE app
+    networks:
+      - network
+
   mysql:
     image: mysql
     ports:
-      - "3306:3306"
+      - 3306:3306
     environment:
       MYSQL_ROOT_PASSWORD: secret
       MYSQL_DATABASE: app
@@ -32,5 +34,6 @@ services:
       MYSQL_PASSWORD: secret
     networks:
       - network
+
 networks:
   network:
