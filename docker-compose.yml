@@ -1,6 +1,7 @@
 version: "3"
 services:
   nginx:
+    container_name: nginx
     build:
       context: ./nginx
     ports:
@@ -11,6 +12,7 @@ services:
       - network
 
   php:
+    container_name: php
     build:
       context: ./php
     volumes:
@@ -24,6 +26,7 @@ services:
       - network
 
   mysql:
+    container_name: mysql
     image: mysql
     ports:
       - 3306:3306
